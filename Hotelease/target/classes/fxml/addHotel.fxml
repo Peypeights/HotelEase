@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.group7.hotelease.Controllers.AddHotelController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #2a2a2a; -fx-padding: 16;">
+            <Button text="← Back" onAction="#back" style="-fx-background-color: #3a3a3a; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 12;"/>
+            <Label text="Add Hotel" textFill="#ffffff" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="12.0">
+            <padding><Insets top="30" right="40" left="40"/></padding>
+
+            <Label text="Name" textFill="#e0e0e0"/>
+            <TextField fx:id="nameField" promptText="Hotel name" prefWidth="520"
+                       style="-fx-background-color: #3a3a3a; -fx-text-fill: #ffffff; -fx-background-radius: 8; -fx-padding: 10;"/>
+
+            <Label text="Type" textFill="#e0e0e0"/>
+            <ComboBox fx:id="typeCombo" prefWidth="520" style="-fx-background-color: #3a3a3a; -fx-background-radius: 8;"/>
+
+            <Label text="Location" textFill="#e0e0e0"/>
+            <TextField fx:id="locationField" promptText="Location" prefWidth="520" style="-fx-background-color: #3a3a3a; -fx-text-fill: #ffffff; -fx-background-radius: 8; -fx-padding: 10;"/>
+
+            <Label text="Description" textFill="#e0e0e0"/>
+            <TextArea fx:id="descArea" promptText="Short description" prefWidth="520" prefHeight="120"
+          style="-fx-background-color: #3a3a3a; -fx-text-fill: black; -fx-prompt-text-fill: #6e6e6e;
+                 -fx-background-radius: 8; -fx-padding: 10;"/>
+
+
+            <HBox spacing="12" alignment="CENTER">
+                <Button text="Save" onAction="#saveHotel" prefWidth="160" style="-fx-background-color: #4a9eff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10;"/>
+                <Button text="Cancel" onAction="#back" prefWidth="160" style="-fx-background-color: transparent; -fx-text-fill: #4a9eff; -fx-border-color: transparent; -fx-padding: 10;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
