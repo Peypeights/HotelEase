@@ -68,3 +68,76 @@ Make sure the following are installed:
 ```bash
 git clone https://github.com/yourusername/HotelEase.git
 cd HotelEase
+```
+### **Clone the Repository**
+```bash
+mvn clean install
+mvn javafx:run
+```
+
+## 🧩 **Project Structure**
+```bash
+HotelEase/
+│
+├── com.group7.hotelease
+│   ├── App.java
+│   └── SystemInfo.java
+│
+├── com.group7.hotelease.Controllers
+│   ├── AdminDashboardController.java
+│   ├── HotelSelectionController.java
+│   ├── LoginController.java
+│   ├── RegistrationController.java
+│   └── RoomListController.java
+│
+├── com.group7.hotelease.Data
+│   ├── bookings.csv
+│   ├── hotels.csv
+│   ├── rooms.csv
+│   └── users.csv
+│
+├── com.group7.hotelease.Models
+│   ├── Booking.java
+│   ├── Hotel.java
+│   ├── Room.java
+│   └── User.java
+│
+├── com.group7.hotelease.Utils
+│   ├── CSVManager.java
+│   └── SceneManager.java
+│
+└── src/main/resources
+    └── fxml
+        ├── adminDashboard.fxml
+        ├── hotelSelection.fxml
+        ├── login.fxml
+        ├── registration.fxml
+        └── roomList.fxml
+```
+
+## 🎨 ** Screenshots**
+### **Login Menu**
+
+### **Registration Page**
+
+### **Admin Dashboard**
+
+### **Hotel Selection (Coastal Bliss / Highland Haven / Urban Escape)**
+
+### **List of Available Rooms**
+
+
+## 🧑‍💻 ** Task Distribution**
+### **Frontend**
+- John Doe
+- Pay Gorn
+
+### **Backend**
+- Throat Goat
+- Lucky T Tiko
+
+### 👥 ** Team Members**
+- Morish Alfonso R. Macayan: Logic flow
+- Dwayne Anton C. Labao: 
+- Yahj Abel R. Lapid: GUI
+- Miguel Yñigo D. Sunga: 
