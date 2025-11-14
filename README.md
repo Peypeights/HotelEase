@@ -145,5 +145,5 @@ Hotelease/
 ### 👥 **Team Members**
 - Morish Alfonso R. Macayan: **Logic flow**
 - Dwayne Anton C. Labao: 
-- Yahj Abel R. Lapid: **GUI**
+- Yahj Abel R. Lapid: **GUI, Login Authentication, Registration**
 - Miguel Yñigo D. Sunga: 
