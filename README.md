@@ -119,7 +119,7 @@ Hotelease/
 
 ## 🎨 ** Screenshots**
 ### **Login Menu**
-![Login Screen](Sample Pictures\Login Menu.jpg)
+![Login Screen](Sample Pictures/Login Menu.jpg)
 ### **Registration Page**
 
 ### **Admin Dashboard**
