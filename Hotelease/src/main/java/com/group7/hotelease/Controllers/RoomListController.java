@@ -14,6 +14,9 @@ import javafx.scene.layout.VBox;
 
 public class RoomListController {
     @FXML private VBox roomListContainer;
+    
+    public static String selectedHotelId = "";
+    public static String selectedHotelName = "";
 
     @FXML
     public void initialize() {

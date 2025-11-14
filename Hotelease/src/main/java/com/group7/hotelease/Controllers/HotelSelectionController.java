@@ -4,34 +4,37 @@
  */
 package com.group7.hotelease.Controllers;
 
-import com.group7.hotelease.Utils.SceneManager;
-import javafx.fxml.FXML;
 /**
  *
  * @author lapid
  */
+import com.group7.hotelease.Utils.SceneManager;
+import javafx.fxml.FXML;
+
 public class HotelSelectionController {
 
     @FXML
     public void selectCoastalBliss() {
-        // TODO: Pass hotel ID to room list
-        SceneManager.switchScene("roomList.fxml", "Coastal Bliss - Rooms");
+        HotelListController.selectedHotelType = "coastal";
+        SceneManager.switchScene("hotelList.fxml", "Coastal Bliss Hotels");
     }
 
     @FXML
     public void selectHighlandHaven() {
-        SceneManager.switchScene("roomList.fxml", "Highland Haven - Rooms");
+        HotelListController.selectedHotelType = "highland";
+        SceneManager.switchScene("hotelList.fxml", "Highland Haven Hotels");
     }
 
     @FXML
     public void selectUrbanEscape() {
-        SceneManager.switchScene("roomList.fxml", "Urban Escape - Rooms");
+        HotelListController.selectedHotelType = "urban";
+        SceneManager.switchScene("hotelList.fxml", "Urban Escape Hotels");
     }
 
     @FXML
     public void logout() {
-        SceneManager.clearHistory();
         LoginController.currentUser = null;
+        SceneManager.clearHistory();
         SceneManager.switchScene("login.fxml", "Hotel Booking System");
     }
 }

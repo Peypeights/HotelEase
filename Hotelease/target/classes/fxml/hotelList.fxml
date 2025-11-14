@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.group7.hotelease.Controllers.HotelListController">
+    
+    <!-- Top Bar -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #2a2a2a; -fx-padding: 20;">
+            <Button text="← Back" onAction="#goBack" 
+                style="-fx-background-color: #3a3a3a; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 6; -fx-padding: 10 20; -fx-cursor: hand;"/>
+            <Label fx:id="titleLabel" text="Available Hotels" textFill="#ffffff" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Press ESC to go back" textFill="#606060" style="-fx-font-size: 11px; -fx-font-style: italic;"/>
+            <Button text="Logout" onAction="#logout" 
+                style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 6; -fx-padding: 10 20; -fx-cursor: hand;"/>
+        </HBox>
+    </top>
+    
+    <!-- Center Content - ScrollPane for hotel grid -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: #1a1a1a; -fx-background-color: #1a1a1a;">
+            <VBox style="-fx-background-color: #1a1a1a;">
+                <padding>
+                    <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+                </padding>
+                
+                <GridPane fx:id="hotelGrid" hgap="30.0" vgap="30.0" alignment="CENTER">
+                    <!-- Hotel cards will be added here dynamically -->
+                </GridPane>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
