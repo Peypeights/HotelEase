@@ -31,6 +31,7 @@ public class HotelSelectionController {
     @FXML
     public void logout() {
         SceneManager.clearHistory();
+        LoginController.currentUser = null;
         SceneManager.switchScene("login.fxml", "Hotel Booking System");
     }
 }

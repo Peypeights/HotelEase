@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CSVManager {
-    private static final String DATA_PATH = "src/main/java/your/package/Data/";
+    private static final String DATA_PATH = "src/main/java/com/group7/hotelease/Data/";
 
     public static List<String[]> readCSV(String filename) {
         List<String[]> data = new ArrayList<>();
