@@ -119,15 +119,15 @@ Hotelease/
 
 ## 🎨 ** Screenshots**
 ### **Login Menu**
-
+![Login Screen](https://github.com/Peypeights/HotelEase/blob/10c98a4377d0290cccbca4479df49988ed21dbcd/Sample%20Pictures/Login%20Menu.jpg)
 ### **Registration Page**
-
+![Registration Page](https://github.com/Peypeights/HotelEase/blob/10c98a4377d0290cccbca4479df49988ed21dbcd/Sample%20Pictures/Registration.jpg)
 ### **Admin Dashboard**
 ![Admin Dashboard](https://github.com/Peypeights/HotelEase/blob/63db77e91b6f81480c4e80e97cb34e7898eaf093/Sample%20Pictures/Admin%20Dashboard.jpg)
 ### **Hotel Selection (Coastal Bliss / Highland Haven / Urban Escape)**
-
+![Hotel Selection](https://github.com/Peypeights/HotelEase/blob/10c98a4377d0290cccbca4479df49988ed21dbcd/Sample%20Pictures/Hotel%20Selection.jpg)
 ### **List of Available Rooms**
-
+![List of Available Rooms](https://github.com/Peypeights/HotelEase/blob/10c98a4377d0290cccbca4479df49988ed21dbcd/Sample%20Pictures/Room%20Listing.jpg)
 
 ## 🧑‍💻 ** Task Distribution**
 ### **Frontend**
@@ -139,7 +139,7 @@ Hotelease/
 - Lucky T Tiko
 
 ### 👥 ** Team Members**
-- Morish Alfonso R. Macayan: Logic flow
+- Morish Alfonso R. Macayan: **Logic flow**
 - Dwayne Anton C. Labao: 
-- Yahj Abel R. Lapid: GUI
+- Yahj Abel R. Lapid: **GUI**
 - Miguel Yñigo D. Sunga: 
