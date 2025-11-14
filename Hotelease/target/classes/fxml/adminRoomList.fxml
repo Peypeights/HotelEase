@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.group7.hotelease.Controllers.AdminRoomListController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16.0" style="-fx-background-color: #2a2a2a; -fx-padding: 16;">
+            <Button text="← Back" onAction="#goBack" style="-fx-background-color: #3a3a3a; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 12;"/>
+            <Label fx:id="titleLabel" text="Manage Rooms" textFill="#ffffff" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Admin • Manage rooms for the hotel" textFill="#909090" style="-fx-font-size: 11px;"/>
+            <Button text="Logout" onAction="#logout" style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 12;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane>
+            <ScrollPane fitToWidth="true" style="-fx-background: #1a1a1a; -fx-background-color: #1a1a1a;">
+                <VBox>
+                    <padding><Insets top="24" right="40" bottom="120" left="40"/></padding>
+                    <GridPane fx:id="roomGrid" hgap="20.0" vgap="20.0" alignment="TOP_CENTER"/>
+                </VBox>
+            </ScrollPane>
+
+            <!-- FAB for Add -->
+            <Button fx:id="addFab" text="+" onAction="#onAddRoom"
+                    StackPane.alignment="BOTTOM_RIGHT" style="
+                        -fx-background-color: #4a9eff;
+                        -fx-text-fill: white;
+                        -fx-font-size: 28px;
+                        -fx-font-weight: bold;
+                        -fx-background-radius: 999;
+                        -fx-pref-width: 64px;
+                        -fx-pref-height: 64px;
+                        -fx-cursor: hand;
+                        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 4);
+                        -fx-padding: 0;
+                        -fx-translate-x: -28; -fx-translate-y: -28;" />
+        </StackPane>
+    </center>
+</BorderPane>

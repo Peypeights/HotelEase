@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.group7.hotelease.Controllers.EditRoomController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #2a2a2a; -fx-padding: 16;">
+            <Button text="← Back" onAction="#back" style="-fx-background-color: #3a3a3a; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 12;"/>
+            <Label text="Edit Room" textFill="#ffffff" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_LEFT" spacing="10.0">
+            <padding><Insets top="24" right="40" left="40"/></padding>
+
+            <Label text="Room Number" textFill="#e0e0e0"/>
+            <TextField fx:id="roomNumberField" promptText="Room number" prefWidth="420"
+                       style="-fx-background-color: #e8e8e8; -fx-text-fill: black; -fx-prompt-text-fill: #6e6e6e; -fx-background-radius: 8; -fx-padding: 10;"/>
+
+            <Label text="Room Type" textFill="#e0e0e0"/>
+            <ComboBox fx:id="typeCombo" prefWidth="420" style="-fx-background-color: #3a3a3a; -fx-background-radius: 8; -fx-text-fill: #e0e0e0;"/>
+
+            <Label text="Price (per night)" textFill="#e0e0e0"/>
+            <TextField fx:id="priceField" promptText="e.g. 150.00" prefWidth="420"
+                       style="-fx-background-color: #e8e8e8; -fx-text-fill: black; -fx-prompt-text-fill: #6e6e6e; -fx-background-radius: 8; -fx-padding: 10;"/>
+
+            <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-padding: 16 0 0 0;">
+                <Button text="Save Changes" onAction="#saveChanges" prefWidth="160" style="-fx-background-color: #4a9eff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+                <Button text="Cancel" onAction="#back" prefWidth="160" style="-fx-background-color: transparent; -fx-text-fill: #4a9eff;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

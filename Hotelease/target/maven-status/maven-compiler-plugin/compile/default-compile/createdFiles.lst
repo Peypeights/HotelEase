@@ -3,6 +3,7 @@ com\group7\hotelease\Controllers\RegistrationController.class
 com\group7\hotelease\Controllers\EditHotelController.class
 com\group7\hotelease\App.class
 com\group7\hotelease\Models\Hotel.class
+com\group7\hotelease\Controllers\AdminRoomListController.class
 module-info.class
 com\group7\hotelease\Models\User.class
 com\group7\hotelease\Models\Booking.class
@@ -11,8 +12,11 @@ com\group7\hotelease\Models\Room.class
 com\group7\hotelease\Utils\CSVManager.class
 com\group7\hotelease\SystemInfo.class
 com\group7\hotelease\Controllers\RoomListController.class
+com\group7\hotelease\Controllers\EditRoomController.class
 com\group7\hotelease\Controllers\ManageHotelsController.class
+com\group7\hotelease\Controllers\AddRoomController.class
 com\group7\hotelease\Controllers\AdminDashboardController.class
+com\group7\hotelease\Controllers\AdminHotelSelectorController.class
 com\group7\hotelease\Controllers\HotelListController.class
 com\group7\hotelease\Controllers\AddHotelController.class
 com\group7\hotelease\Controllers\HotelSelectionController.class

@@ -21,7 +21,7 @@ public class AdminDashboardController {
 
     @FXML
     public void manageRooms() {
-        // TODO: Open rooms management scene
+        SceneManager.switchScene("adminHotelSelector.fxml", "Manage Rooms");
     }
 
     @FXML

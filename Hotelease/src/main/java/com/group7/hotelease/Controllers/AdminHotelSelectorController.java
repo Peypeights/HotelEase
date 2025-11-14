@@ -13,20 +13,17 @@ import com.group7.hotelease.Utils.SceneManager;
 import com.group7.hotelease.Models.Hotel;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
-import javafx.scene.control.ButtonType;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-public class ManageHotelsController {
+public class AdminHotelSelectorController {
     @FXML private GridPane hotelGrid;
 
     @FXML
@@ -95,64 +92,22 @@ public class ManageHotelsController {
         HBox actions = new HBox(10);
         actions.setAlignment(Pos.CENTER);
 
-        Button editBtn = new Button("Edit");
-        editBtn.setStyle("-fx-background-color: transparent; -fx-border-color: #4a9eff; -fx-border-radius: 8; -fx-text-fill: #4a9eff; -fx-padding: 8 16; -fx-cursor: hand;");
-        editBtn.setOnAction(e -> {
-            EditHotelController.selectedHotelId = hotel.getHotelId();
-            SceneManager.switchScene("editHotel.fxml", "Edit Hotel - " + hotel.getHotelName());
+        Button manageRoomsBtn = new Button("Manage Rooms");
+        manageRoomsBtn.setStyle("-fx-background-color: #4a9eff; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16; -fx-cursor: hand;");
+        manageRoomsBtn.setOnAction(e -> {
+            AdminRoomListController.selectedHotelId = hotel.getHotelId();
+            AdminRoomListController.selectedHotelName = hotel.getHotelName();
+            SceneManager.switchScene("adminRoomList.fxml", hotel.getHotelName() + " - Manage Rooms");
         });
 
-        Button deleteBtn = new Button("Delete");
-        deleteBtn.setStyle("-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16; -fx-cursor: hand;");
-        deleteBtn.setOnAction(e -> handleDelete(hotel.getHotelId(), hotel.getHotelName()));
-
-        // NOTE: no manageRoomsBtn here (reverted)
-
-        actions.getChildren().addAll(editBtn, deleteBtn);
+        actions.getChildren().addAll(manageRoomsBtn);
 
         card.getChildren().addAll(name, type, location, desc, actions);
         return card;
     }
 
-    private void handleDelete(String hotelId, String hotelName) {
-        Alert conf = new Alert(Alert.AlertType.CONFIRMATION);
-        conf.setTitle("Delete Hotel");
-        conf.setHeaderText(null);
-        conf.setContentText("Delete '" + hotelName + "' permanently?");
-        Optional<ButtonType> res = conf.showAndWait();
-        if (res.isPresent() && res.get() == ButtonType.OK) {
-            List<String[]> data = CSVManager.readCSV("hotels.csv");
-            // keep header, remove matching id row
-            List<String[]> newData = new ArrayList<>();
-            if (!data.isEmpty()) newData.add(data.get(0));
-            for (int i = 1; i < data.size(); i++) {
-                String[] row = data.get(i);
-                if (row.length > 0 && !row[0].trim().equals(hotelId)) {
-                    newData.add(row);
-                }
-            }
-            CSVManager.writeCSV("hotels.csv", newData);
-
-            Alert info = new Alert(Alert.AlertType.INFORMATION);
-            info.setTitle("Deleted");
-            info.setHeaderText(null);
-            info.setContentText("Hotel deleted successfully.");
-            info.showAndWait();
-
-            loadHotels();
-        }
-    }
-
-    @FXML
-    public void onAddHotel() {
-        SceneManager.switchScene("addHotel.fxml", "Add New Hotel");
-    }
-
-    @FXML
-    public void goBack() { SceneManager.goBack(); }
-
-    @FXML
-    public void logout() {
+    @FXML public void goBack() { SceneManager.goBack(); }
+    @FXML public void logout() {
         LoginController.currentUser = null;
         SceneManager.clearHistory();
         SceneManager.switchScene("login.fxml", "Hotel Booking System");

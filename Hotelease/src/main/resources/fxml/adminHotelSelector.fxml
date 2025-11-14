@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.group7.hotelease.Controllers.AdminHotelSelectorController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16.0" style="-fx-background-color: #2a2a2a; -fx-padding: 16;">
+            <Button text="← Back" onAction="#goBack" style="-fx-background-color: #3a3a3a; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 12;"/>
+            <Label text="Select Hotel — Manage Rooms" textFill="#ffffff" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#logout" style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 12;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: #1a1a1a; -fx-background-color: #1a1a1a;">
+            <VBox>
+                <padding><Insets top="24" right="40" bottom="40" left="40"/></padding>
+                <GridPane fx:id="hotelGrid" hgap="20.0" vgap="20.0" alignment="TOP_CENTER"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
