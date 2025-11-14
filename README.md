@@ -1,6 +1,7 @@
 # **HotelEase**  
 ### *A JavaFX-Based Hotel Management & Booking System*  
 Course: **CSS123P / Computer Programming 3**
+Group Name: **KaCodeKo**
 
 ---
 
@@ -144,6 +145,6 @@ Hotelease/
 
 ### 👥 **Team Members**
 - Morish Alfonso R. Macayan: **Logic flow, pictures**
-- Dwayne Anton C. Labao: 
-- Yahj Abel R. Lapid: **GUI, Login Authentication, Registration**
-- Miguel Yñigo D. Sunga: **Booking feature**
+- Dwayne Anton C. Labao: **Booking Listing/Feature**
+- Yahj Abel R. Lapid: **GUI, Login Authentication, Registration, Hotel Viewer and Hotel Manager, Room Viewer and Room Manager**
+- Miguel Yñigo D. Sunga:
