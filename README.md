@@ -61,7 +61,7 @@ All data is stored **locally using CSV files** — no SQL or external database r
 ### **Prerequisites**
 Make sure the following are installed:
 
-- Java (preferably **23.0.2**, but compatible versions may work)
+- Java (preferably **23.0.2**, but compatible versions may work (Hopefully 🙂))
 - Apache Maven (**3.9.11**)
 - JavaFX SDK
 
@@ -144,7 +144,7 @@ Hotelease/
 - Dwayne Anton C. Labao
 
 ### 👥 **Team Members**
-- Morish Alfonso R. Macayan: **Logic flow, pictures**
+- Morish Alfonso R. Macayan: **Logic flow, Base/Template, Pictures/CSVs**
 - Dwayne Anton C. Labao: **Booking Listing/Feature**
 - Yahj Abel R. Lapid: **GUI, Login Authentication, Registration, Hotel Viewer and Hotel Manager, Room Viewer and Room Manager**
 - Miguel Yñigo D. Sunga:
