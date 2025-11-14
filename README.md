@@ -135,12 +135,11 @@ Hotelease/
 
 ## 🧑‍💻 **Task Distribution**
 ### **Frontend**
-- John Doe
-- Pay Gorn
+- Yahj Abel R. Lapid
 
 ### **Backend**
-- Throat Goat
-- Lucky T Tiko
+- Morish Alfonso R. Macayan
+- Yahj Abel R. Lapid
 
 ### 👥 **Team Members**
 - Morish Alfonso R. Macayan: **Logic flow**
