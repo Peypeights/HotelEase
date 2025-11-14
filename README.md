@@ -1,6 +1,6 @@
 # **HotelEase**  
 ### *A JavaFX-Based Hotel Management & Booking System*  
-Course: **CSS123P / Computer Programming 3**
+Course: **CSS123P / Computer Programming 3**  
 Group Name: **KaCodeKo**
 
 ---
