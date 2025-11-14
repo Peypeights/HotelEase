@@ -117,6 +117,8 @@ Hotelease/
       └── 📄 roomList.fxml
 ```
 
+---
+
 ## 🎨 ** Screenshots**
 ### **Login Menu**
 ![Login Screen](https://github.com/Peypeights/HotelEase/blob/10c98a4377d0290cccbca4479df49988ed21dbcd/Sample%20Pictures/Login%20Menu.jpg)
@@ -128,6 +130,8 @@ Hotelease/
 ![Hotel Selection](https://github.com/Peypeights/HotelEase/blob/10c98a4377d0290cccbca4479df49988ed21dbcd/Sample%20Pictures/Hotel%20Selection.jpg)
 ### **List of Available Rooms**
 ![List of Available Rooms](https://github.com/Peypeights/HotelEase/blob/10c98a4377d0290cccbca4479df49988ed21dbcd/Sample%20Pictures/Room%20Listing.jpg)
+
+---
 
 ## 🧑‍💻 ** Task Distribution**
 ### **Frontend**
