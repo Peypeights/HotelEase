@@ -140,9 +140,10 @@ Hotelease/
 ### **Backend**
 - Morish Alfonso R. Macayan
 - Yahj Abel R. Lapid
+- Dwayne Anton C. Labao
 
 ### 👥 **Team Members**
-- Morish Alfonso R. Macayan: **Logic flow**
+- Morish Alfonso R. Macayan: **Logic flow, pictures**
 - Dwayne Anton C. Labao: 
 - Yahj Abel R. Lapid: **GUI, Login Authentication, Registration**
-- Miguel Yñigo D. Sunga: 
+- Miguel Yñigo D. Sunga: **Booking feature**
