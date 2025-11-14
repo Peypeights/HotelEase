@@ -9,6 +9,7 @@ package com.group7.hotelease.Controllers;
  * @author lapid
  */
 import com.group7.hotelease.Utils.SceneManager;
+import com.group7.hotelease.Controllers.LoginController;
 import javafx.fxml.FXML;
 
 public class AdminDashboardController {
@@ -31,6 +32,7 @@ public class AdminDashboardController {
     @FXML
     public void logout() {
         SceneManager.clearHistory();
+        LoginController.currentUser = null;
         SceneManager.switchScene("login.fxml", "Hotel Booking System");
     }
 }

@@ -9,7 +9,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         SceneManager.setStage(stage);
-        SceneManager.switchScene("login.fxml", "Hotel Booking System");
+        SceneManager.switchScene("login.fxml", "HotelEase");
         stage.show();
     }
 
