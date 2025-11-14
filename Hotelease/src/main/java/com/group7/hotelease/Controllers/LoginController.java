@@ -8,6 +8,7 @@ package com.group7.hotelease.Controllers;
  *
  * @author lapid
  */
+
 import com.group7.hotelease.Utils.SceneManager;
 import com.group7.hotelease.Utils.CSVManager;
 import com.group7.hotelease.Models.User;
@@ -30,21 +31,27 @@ public class LoginController {
         String username = usernameField.getText().trim();
         String password = passwordField.getText();
         
-        // Checks if its empty duhh
+        // Checks if it's empty
         if (username.isEmpty() || password.isEmpty()) {
             errorLabel.setText("Please enter username and password");
             return;
         }
         
-        // Basically a hardcoded or secret admin account. FOR TESTING SHITS
+        // Hardcoded admin account for testing
         if (username.equals("admin") && password.equals("admin123")) {
             User newUser = new User("0", "admin", "admin123", "admin");
             
             if (currentUser == null) {
                 currentUser = newUser;
-            } else if (newUser != currentUser) {
-                errorLabel.setText("An account is currently logged in");
-                return;
+            } else {
+                // allow if same userId, block if different
+                if (!safeEquals(currentUser.getUserId(), newUser.getUserId())) {
+                    errorLabel.setText("Another account is currently logged in");
+                    return;
+                } else {
+                    // same user logging in again — refresh session
+                    currentUser = newUser;
+                }
             }
             
             SceneManager.clearHistory();
@@ -55,39 +62,49 @@ public class LoginController {
         // Read users from CSV
         List<String[]> users = CSVManager.readCSV("users.csv");
         
-        // Skip header row because its a header, then search for user
+        // Skip header row then search for user
         boolean found = false;
         for (int i = 1; i < users.size(); i++) {
             String[] userData = users.get(i);
             
             // CSV format: userId,username,password,accountType
             if (userData.length >= 4) {
+                String csvUserId = userData[0].trim();
                 String csvUsername = userData[1].trim();
                 String csvPassword = userData[2].trim();
                 String accountType = userData[3].trim();
                 
-                // for debugging, pero pwede naman tanggalin.
+                // Debugging (optional)
                 System.out.println("Comparing: '" + username + "' with '" + csvUsername + "'");
                 System.out.println("Password: '" + password + "' with '" + csvPassword + "'");
                 
                 if (csvUsername.equals(username) && csvPassword.equals(password)) {
                     found = true;
                     
-                    // Store current user
-                    User newUser = new User(userData[0], csvUsername, csvPassword, accountType);
+                    // Create user object from CSV row
+                    User newUser = new User(csvUserId, csvUsername, csvPassword, accountType);
                     
                     if (currentUser == null) {
+                        // nobody logged in — accept
                         currentUser = newUser;
-                    } else if (newUser == currentUser) {
-                        errorLabel.setText("An account is currently logged in");
-                        return;
+                    } else {
+                        // someone is logged in — only block if it's a different user
+                        String activeId = currentUser.getUserId();
+                        String incomingId = newUser.getUserId();
+                        if (activeId == null || !activeId.equals(incomingId)) {
+                            errorLabel.setText("Another account is currently logged in");
+                            return;
+                        } else {
+                            // Same user logging in again: refresh session
+                            currentUser = newUser;
+                        }
                     }
                     
                     // Navigate based on account type
                     SceneManager.clearHistory();
-                    if (accountType.equalsIgnoreCase("admin")) { // admin dashboard if admin
+                    if (accountType.equalsIgnoreCase("admin")) {
                         SceneManager.switchScene("adminDashboard.fxml", "Admin Dashboard");
-                    } else { // guest dashbooard if guest
+                    } else {
                         SceneManager.switchScene("hotelSelection.fxml", "Select a Hotel");
                     }
                     return;
@@ -95,7 +112,7 @@ public class LoginController {
             }
         }
         
-        //  pretty self explanatory
+        // If not found
         if (!found) {
             errorLabel.setText("Invalid username or password");
         }
@@ -111,5 +128,12 @@ public class LoginController {
     @FXML
     public void goToRegistration() {
         SceneManager.switchScene("registration.fxml", "Register Account");
+    }
+
+    // small helper to avoid NPEs when comparing IDs
+    private boolean safeEquals(String a, String b) {
+        if (a == null && b == null) return true;
+        if (a == null || b == null) return false;
+        return a.equals(b);
     }
 }
