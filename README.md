@@ -77,47 +77,49 @@ mvn javafx:run
 
 ## 🧩 **Project Structure**
 ```bash
-HotelEase/
+Hotelease/
 │
-├── com.group7.hotelease
-│   ├── App.java
-│   └── SystemInfo.java
+├── 📦 Source Packages
+│ └── 📁 com.group7.hotelease
+│ │   ├── 📄 App.java
+│ │   └── 📄 SystemInfo.java
+│ │
+│ ├── 📁 Controllers
+│ │   ├── 📄 AdminDashboardController.java
+│ │   ├── 📄 HotelSelectionController.java
+│ │   ├── 📄 LoginController.java
+│ │   ├── 📄 RegistrationController.java
+│ │   └── 📄 RoomListController.java
+│ │
+│ ├── 📁 Data
+│ │   ├── 📄 bookings.csv
+│ │   ├── 📄 hotels.csv
+│ │   ├── 📄 rooms.csv
+│ │   └── 📄 users.csv
+│ │
+│ ├── 📁 Models
+│ │   ├── 📄 Booking.java
+│ │   ├── 📄 Hotel.java
+│ │   ├── 📄 Room.java
+│ │   └── 📄 User.java
+│ │
+│ └── 📁 Utils
+│   ├── 📄 CSVManager.java
+│   └── 📄 SceneManager.java
 │
-├── com.group7.hotelease.Controllers
-│   ├── AdminDashboardController.java
-│   ├── HotelSelectionController.java
-│   ├── LoginController.java
-│   ├── RegistrationController.java
-│   └── RoomListController.java
-│
-├── com.group7.hotelease.Data
-│   ├── bookings.csv
-│   ├── hotels.csv
-│   ├── rooms.csv
-│   └── users.csv
-│
-├── com.group7.hotelease.Models
-│   ├── Booking.java
-│   ├── Hotel.java
-│   ├── Room.java
-│   └── User.java
-│
-├── com.group7.hotelease.Utils
-│   ├── CSVManager.java
-│   └── SceneManager.java
-│
-└── src/main/resources
-    └── fxml
-        ├── adminDashboard.fxml
-        ├── hotelSelection.fxml
-        ├── login.fxml
-        ├── registration.fxml
-        └── roomList.fxml
+└── 📂 Other Sources
+  └── 📁 src/main/resources
+    └── 📁 fxml
+      ├── 📄 adminDashboard.fxml
+      ├── 📄 hotelSelection.fxml
+      ├── 📄 login.fxml
+      ├── 📄 registration.fxml
+      └── 📄 roomList.fxml
 ```
 
 ## 🎨 ** Screenshots**
 ### **Login Menu**
-
+![Login Screen](Sample Pictures\Login Menu.jpg)
 ### **Registration Page**
 
 ### **Admin Dashboard**
