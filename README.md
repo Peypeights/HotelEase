@@ -119,7 +119,7 @@ Hotelease/
 
 ---
 
-## 🎨 ** Screenshots**
+## 🎨 **Screenshots**
 ### **Login Menu**
 ![Login Screen](https://github.com/Peypeights/HotelEase/blob/10c98a4377d0290cccbca4479df49988ed21dbcd/Sample%20Pictures/Login%20Menu.jpg)
 ### **Registration Page**
@@ -133,7 +133,7 @@ Hotelease/
 
 ---
 
-## 🧑‍💻 ** Task Distribution**
+## 🧑‍💻 **Task Distribution**
 ### **Frontend**
 - John Doe
 - Pay Gorn
@@ -142,7 +142,7 @@ Hotelease/
 - Throat Goat
 - Lucky T Tiko
 
-### 👥 ** Team Members**
+### 👥 **Team Members**
 - Morish Alfonso R. Macayan: **Logic flow**
 - Dwayne Anton C. Labao: 
 - Yahj Abel R. Lapid: **GUI**
