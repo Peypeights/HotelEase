@@ -119,11 +119,11 @@ Hotelease/
 
 ## 🎨 ** Screenshots**
 ### **Login Menu**
-![Login Screen](Sample Pictures/Login Menu.jpg)
+
 ### **Registration Page**
 
 ### **Admin Dashboard**
-
+![Admin Dashboard](https://github.com/Peypeights/HotelEase/blob/63db77e91b6f81480c4e80e97cb34e7898eaf093/Sample%20Pictures/Admin%20Dashboard.jpg)
 ### **Hotel Selection (Coastal Bliss / Highland Haven / Urban Escape)**
 
 ### **List of Available Rooms**
