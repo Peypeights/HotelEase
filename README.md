@@ -136,6 +136,7 @@ Hotelease/
 
 ## 🧑‍💻 **Task Distribution**
 ### **Frontend**
+- Morish Alfonso R. Macayan
 - Yahj Abel R. Lapid
 
 ### **Backend**
@@ -145,6 +146,6 @@ Hotelease/
 
 ### 👥 **Team Members**
 - Morish Alfonso R. Macayan: **Logic flow, Base/Template, Pictures/CSVs**
-- Dwayne Anton C. Labao: **Booking Listing/Feature**
+- Dwayne Anton C. Labao: **Booking Listing/Feature, Assistance/Supportive Contributor**
 - Yahj Abel R. Lapid: **GUI, Login Authentication, Registration, Hotel Viewer and Hotel Manager, Room Viewer and Room Manager**
 - Miguel Yñigo D. Sunga:
