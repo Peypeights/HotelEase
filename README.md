@@ -143,9 +143,10 @@ Hotelease/
 - Morish Alfonso R. Macayan
 - Yahj Abel R. Lapid
 - Dwayne Anton C. Labao
+- - Miguel Yñigo D. Sunga
 
 ### 👥 **Team Members**
 - Morish Alfonso R. Macayan: **Logic flow, Base/Template, Pictures/CSVs**
 - Dwayne Anton C. Labao: **Booking Listing/Feature, Assistance/Supportive Contributor**
 - Yahj Abel R. Lapid: **GUI, Login Authentication, Registration, Hotel Viewer and Hotel Manager, Room Viewer and Room Manager**
-- Miguel Yñigo D. Sunga:
+- Miguel Yñigo D. Sunga: **Images**
