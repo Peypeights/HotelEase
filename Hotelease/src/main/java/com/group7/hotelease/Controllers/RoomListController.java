@@ -8,19 +8,18 @@ package com.group7.hotelease.Controllers;
  *
  * @author lapid
  */
+
 import com.group7.hotelease.Utils.CSVManager;
 import com.group7.hotelease.Utils.SceneManager;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -92,7 +91,6 @@ public class RoomListController {
         Label statLabel = new Label("Status:");
         statLabel.setStyle("-fx-text-fill: #808080; -fx-font-size: 12px;");
         Label statValue = new Label(statusDisplay(status));
-        // correct color application (exact colors requested)
         statValue.setStyle("-fx-text-fill: " + statusColor(status) + "; -fx-font-size: 12px; -fx-font-weight: bold;");
         statRow.getChildren().addAll(statLabel, statValue);
         left.getChildren().addAll(lblRoom, lblType, statRow);
@@ -155,16 +153,26 @@ public class RoomListController {
             }
 
             if ("available".equalsIgnoreCase(status)) {
-                boolean ok = confirm("Request Booking", "Send booking request for room " + roomNumber + "?");
-                if (ok) {
-                    // store the userId (primary key string) in CSV
-                    updateRoomBooking(roomId, "pending", cur);
+                // ask for check-in / check-out dates before creating booking
+                Optional<LocalDate[]> dates = showDateDialog();
+                if (dates.isPresent()) {
+                    LocalDate[] d = dates.get();
+                    LocalDate checkIn = d[0];
+                    LocalDate checkOut = d[1];
+                    boolean ok = confirm("Request Booking", "Send booking request for room " + roomNumber + " from " + checkIn + " to " + checkOut + "?");
+                    if (ok) {
+                        // create booking record and set room pending
+                        createBookingRecord(cur, roomId, checkIn.toString(), checkOut.toString());
+                        updateRoomBooking(roomId, "pending", cur);
+                    }
                 }
             } else if ("pending".equalsIgnoreCase(status)) {
                 // cancel only if currentUser matches userId
                 if (userId != null && userId.equals(cur)) {
                     boolean ok = confirm("Cancel Booking Request", "Cancel your booking request for room " + roomNumber + "?");
                     if (ok) {
+                        // find and mark booking(s) for this user+room in bookings.csv as "cancelled" or remove? We'll mark "rejected"
+                        cancelBookingsForUserRoom(cur, roomId);
                         updateRoomBooking(roomId, "available", "");
                     }
                 } else {
@@ -182,6 +190,35 @@ public class RoomListController {
         return card;
     }
 
+    // show dialog with two DatePickers, returns Optional of LocalDate[] {checkIn, checkOut}
+    private Optional<LocalDate[]> showDateDialog() {
+        Dialog<ButtonType> dlg = new Dialog<>();
+        dlg.setTitle("Select Dates");
+        dlg.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+
+        DatePicker dpIn = new DatePicker(LocalDate.now());
+        DatePicker dpOut = new DatePicker(LocalDate.now().plusDays(1));
+        VBox content = new VBox(8, new Label("Check-in:"), dpIn, new Label("Check-out:"), dpOut);
+        content.setPadding(new Insets(12));
+        dlg.getDialogPane().setContent(content);
+
+        Optional<ButtonType> res = dlg.showAndWait();
+        if (res.isPresent() && res.get() == ButtonType.OK) {
+            LocalDate in = dpIn.getValue();
+            LocalDate out = dpOut.getValue();
+            if (in == null || out == null || !out.isAfter(in)) {
+                Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setTitle("Invalid dates");
+                a.setHeaderText(null);
+                a.setContentText("Please select valid check-in and check-out dates (check-out must be after check-in).");
+                a.showAndWait();
+                return Optional.empty();
+            }
+            return Optional.of(new LocalDate[]{in, out});
+        }
+        return Optional.empty();
+    }
+
     // helper to prompt confirmation
     private boolean confirm(String title, String message) {
         Alert c = new Alert(Alert.AlertType.CONFIRMATION);
@@ -190,6 +227,54 @@ public class RoomListController {
         c.setContentText(message);
         Optional<ButtonType> res = c.showAndWait();
         return res.isPresent() && res.get() == ButtonType.OK;
+    }
+
+    // Create booking record in bookings.csv
+    private void createBookingRecord(String userId, String roomId, String checkIn, String checkOut) {
+        List<String[]> rows = CSVManager.readCSV("bookings.csv");
+        List<String[]> newRows = new ArrayList<>();
+        if (!rows.isEmpty()) newRows.add(rows.get(0)); // keep header
+        newRows.addAll(rows.size() > 1 ? rows.subList(1, rows.size()) : new ArrayList<>());
+
+        int newId = 1;
+        if (rows.size() > 1) {
+            try {
+                String lastId = rows.get(rows.size() - 1)[0];
+                newId = Integer.parseInt(lastId) + 1;
+            } catch (Exception ex) {
+                newId = rows.size();
+            }
+        }
+
+        String[] newRow = { String.valueOf(newId), userId, roomId, checkIn, checkOut, "pending" };
+        newRows.add(newRow);
+        CSVManager.writeCSV("bookings.csv", newRows);
+    }
+
+    // Cancel any pending bookings for this user + room (mark as "rejected")
+    private void cancelBookingsForUserRoom(String userId, String roomId) {
+        List<String[]> rows = CSVManager.readCSV("bookings.csv");
+        List<String[]> newRows = new ArrayList<>();
+        if (!rows.isEmpty()) newRows.add(rows.get(0));
+        for (int i = 1; i < rows.size(); i++) {
+            String[] r = rows.get(i);
+            if (r.length >= 6 && r[1].equals(userId) && r[2].equals(roomId) && r[5].equalsIgnoreCase("pending")) {
+                String[] updated = new String[r.length];
+                System.arraycopy(r, 0, updated, 0, r.length);
+                updated[5] = "rejected";
+                newRows.add(updated);
+            } else {
+                // normalize
+                if (r.length < 6) {
+                    String[] expanded = new String[6];
+                    for (int j = 0; j < 6; j++) expanded[j] = j < r.length ? r[j] : "";
+                    newRows.add(expanded);
+                } else {
+                    newRows.add(r);
+                }
+            }
+        }
+        CSVManager.writeCSV("bookings.csv", newRows);
     }
 
     // Update CSV row for a room: set status and userId, then reload

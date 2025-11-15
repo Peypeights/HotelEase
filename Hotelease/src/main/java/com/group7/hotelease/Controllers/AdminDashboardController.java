@@ -16,7 +16,7 @@ public class AdminDashboardController {
 
     @FXML
     public void manageBookings() {
-        // TODO: Open bookings management scene
+        SceneManager.switchScene("adminBookings.fxml", "Manage Bookings");
     }
 
     @FXML

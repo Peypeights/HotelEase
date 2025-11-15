@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.group7.hotelease.Controllers.AdminBookingsController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16.0" style="-fx-background-color: #2a2a2a; -fx-padding: 16;">
+            <Button text="← Back" onAction="#goBack" style="-fx-background-color: #3a3a3a; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 12;"/>
+            <Label text="Manage Bookings" textFill="#ffffff" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#logout" style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 12;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: #1a1a1a; -fx-background-color: #1a1a1a;">
+            <VBox fx:id="bookingsContainer" spacing="12.0" style="-fx-padding: 24;">
+                <!-- Booking rows will be generated dynamically -->
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

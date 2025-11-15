@@ -5,6 +5,7 @@ com\group7\hotelease\App.class
 com\group7\hotelease\Models\Hotel.class
 com\group7\hotelease\Controllers\AdminRoomListController.class
 module-info.class
+com\group7\hotelease\Controllers\AdminBookingsController.class
 com\group7\hotelease\Models\User.class
 com\group7\hotelease\Models\Booking.class
 com\group7\hotelease\Controllers\LoginController.class

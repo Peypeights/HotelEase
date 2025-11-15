@@ -1,1 +1,1 @@
-bookingId,userId,roomId,checkInDate,checkOutDate,status
+"bookingId","userId","roomId","checkInDate","checkOutDate","status"
