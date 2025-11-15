@@ -143,7 +143,7 @@ Hotelease/
 - Morish Alfonso R. Macayan
 - Yahj Abel R. Lapid
 - Dwayne Anton C. Labao
-- - Miguel Yñigo D. Sunga
+- Miguel Yñigo D. Sunga
 
 | **Team Member**               | **Roles / Contributions**                                                                                |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------- |
