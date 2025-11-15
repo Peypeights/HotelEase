@@ -145,10 +145,10 @@ Hotelease/
 - Dwayne Anton C. Labao
 - - Miguel Yñigo D. Sunga
 
-| **Team Member**               | **Roles / Contributions**                                                              |
-| ----------------------------- | -------------------------------------------------------------------------------------- |
-| **Morish Alfonso R. Macayan** | Logic flow, Base/Template, Pictures/CSVs                                               |
-| **Dwayne Anton C. Labao**     | Booking Listing/Feature, Assistance/Supportive Contributor                             |
-| **Yahj Abel R. Lapid**        | GUI, Login Authentication, Registration, Hotel Viewer & Manager, Room Viewer & Manager |
-| **Miguel Yñigo D. Sunga**     | Images                                                                                 |
+| **Team Member**               | **Roles / Contributions**                                                                                |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Morish Alfonso R. Macayan** | Logic flow, Base/Template, Pictures/CSVs, GUI, Interactivity, Lead Programmer 2                          |
+| **Dwayne Anton C. Labao**     | Booking Listing/Feature, Assistance/Supportive Contributor                                               |
+| **Yahj Abel R. Lapid**        | Lead Programmer 1 GUI, Login Authentication, Registration, Hotel Viewer & Manager, Room Viewer & Manager |
+| **Miguel Yñigo D. Sunga**     | Images                                                                                                   |
 
